@@ -31,7 +31,7 @@ public class RepresentationModelController {
   {
     Person person = new Person("half", "jang");
     EntityModel<Person> model = EntityModel.of(person);
-    model.add(Link.of("http://localhost:9613/entㅍㅊㅍㅍ ㅍㄹㅎㅍㅊㅇㄹㄷㄹㄷㅊㄱㄹㅇㄷㄱ5ㅅㅇㄴㅁㅁㅁity"));
+    model.add(Link.of("http://localhost:9613/entity"));
     Link link = Link.of("http://localhost:9613/representation", IanaLinkRelations.NEXT);
     model.add(link.withRel("next"));
 
