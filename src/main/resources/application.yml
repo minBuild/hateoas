@@ -1,0 +1,20 @@
+server:
+  port: 9613
+
+spring:
+  datasource:
+    url: jdbc:mariadb://3.34.45.194:3306/REST?serverTimezone=UTC&charaterEncoding=UTF-8
+    username: rest
+    password: resttest
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      format_sql: true
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
