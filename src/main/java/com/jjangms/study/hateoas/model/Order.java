@@ -1,0 +1,43 @@
+package com.jjangms.study.hateoas.model;
+
+import com.jjangms.study.hateoas.common.Status;
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "CUSTOMER_ORDER")
+public class Order {
+
+  private @Id @GeneratedValue Long id;
+  private String description;
+  private Status status;
+
+  @Override
+  public boolean equals(Object o) {
+
+    if (this == o)
+      return true;
+    if (!(o instanceof Order))
+      return false;
+    Order order = (Order) o;
+    return Objects.equals(this.id, order.id) && Objects.equals(this.description, order.description)
+        && this.status == order.status;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.id, this.description, this.status);
+  }
+
+  @Override
+  public String toString() {
+    return "Order{" + "id=" + this.id + ", description='" + this.description + '\'' + ", status=" + this.status + '}';
+  }
+}
